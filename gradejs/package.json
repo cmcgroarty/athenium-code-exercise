@@ -1,0 +1,28 @@
+{
+  "name": "gradejs",
+  "version": "0.0.0",
+  "private": true,
+  "description": "athenium code exercise gradejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec -r mocha-clean",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iammarix/athenium-code-exercise.git"
+  },
+  "author": "cmcg",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/iammarix/athenium-code-exercise/issues"
+  },
+  "homepage": "https://github.com/iammarix/athenium-code-exercise#readme",
+  "dependencies": {
+    "async": "^2.6.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.0"
+  }
+}
