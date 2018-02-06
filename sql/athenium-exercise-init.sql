@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 06, 2018 at 07:45 PM
+-- Generation Time: Feb 06, 2018 at 08:23 PM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.33
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `athenium-code-exercise`
 --
+CREATE DATABASE IF NOT EXISTS `athenium-code-exercise` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `athenium-code-exercise`;
 
 -- --------------------------------------------------------
 
