@@ -8,7 +8,8 @@ var givenScores = {
 	fromProblem: [99, 92, 91, 91, 89, 85, 83, 82, 80, 79, 78, 78, 77, 76, 75, 74, 62, 55, 43, 20],
 	notMultiple5: [99, 88, 86, 77, 75, 66, 55, 40, 38, 31, 22],
 	identical: [90, 90, 90, 90, 90, 50, 40, 30, 20],
-	lessThan5: [90, 80, 40]
+	lessThan5: [90, 80, 40],
+	only1Score: [99]
 };
 var expectedGrades = {
 	fromProblem: {
@@ -18,9 +19,10 @@ var expectedGrades = {
 		D: [77, 76, 75, 74],
 		F: [62, 55, 43, 20]
 	},
-	notMultiple5: {A: [99, 88], B: [86, 77], C: [75, 66], D: [55, 40], F: [38, 31, 22]},
+	notMultiple5: {A: [99, 88, 86], B: [77, 75], C: [66, 55], D: [40, 38], F: [31, 22]},
 	identical: {A: [90, 90, 90, 90, 90], not: 90},
-	lessThan5: {}
+	lessThan5: {},
+	only1Score: {A: [99]}
 };
 
 
@@ -28,6 +30,13 @@ describe('gradejs', function () {
 	describe('#gradeScores()', function () {
 		it('should gracefully error when scores is null', function (done) {
 			grade(null, function (err) {
+				should.exist(err);
+				err.message.should.equal("no scores provided to grade");
+				done();
+			});
+		});
+		it('should gracefully error when scores is undefined', function (done) {
+			grade(undefined, function (err) {
 				should.exist(err);
 				err.message.should.equal("no scores provided to grade");
 				done();
@@ -103,6 +112,21 @@ describe('gradejs', function () {
 				grades.F.should.not.include(expectedGrades.identical.not);
 				done();
 			});
+		});
+
+		it('should assign score.length == 1 as an A', function(done){
+			grade(givenScores.only1Score, function(err, grades){
+				should.exist(grades);
+				grades.A.should.have.members(expectedGrades.only1Score.A);
+				grades.B.should.be.empty;
+				grades.C.should.be.empty;
+				grades.D.should.be.empty;
+				grades.F.should.be.empty;
+
+				done();
+
+			});
+
 		});
 	});
 });
