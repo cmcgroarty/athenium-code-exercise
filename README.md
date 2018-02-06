@@ -1,7 +1,7 @@
 # athenium-code-exercise
 
-Question 1: [SQL](./tree/master/sql)
-------------------------------------
+Question 1: [SQL](./sql)
+------------------------
 Assume you have the following tables:
 
 ### Item
@@ -34,7 +34,7 @@ all items in orderID 12345. Please note that Item.categoryID may be NULL,
 and that the query should return item names even for those records where
 this is the case.
 
-Question 2: [Programming](./tree/master/gradejs)
+Question 2: [Programming](./gradejs)
 ------------------------------------------------
 A teacher gives a class of students an exam. He decides to grade the
 exam using the following method:
