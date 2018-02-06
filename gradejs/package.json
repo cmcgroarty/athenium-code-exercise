@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --reporter spec -r mocha-clean",
-    "start": "node index.js"
+    "grade": "node index.js"
   },
   "repository": {
     "type": "git",
